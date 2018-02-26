@@ -25,7 +25,6 @@ const selectedHover = (() => {
 		console.log(e);
 		let input = e.currentTarget;
 		let card = [...e.target.parentNode.getElementsByClassName("product__card")];
-		console.log('me.mouseinside', me.mouseinside);
 		if (input.checked && !me.mouseinside) {
 			if (!card[0].classList.contains('selected')) {
 				card[0].classList.add('selected');
