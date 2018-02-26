@@ -4,10 +4,10 @@ html
 		meta(name='viewport', content='width=device-width, maximum-scale=1')
 		meta(charset='UTF-8')
 		title Funbox-test
-		-var urlStyle = "/assets/css/main.dev.css"
+		-var urlStyle = "assets/css/main.dev.css"
 		if environment === 'production'
-			-var urlStyle = "/assets/css/main.min.css"
-		link(href=urlStyle rel='stylesheet' some=environment type='text/css')
+			-var urlStyle = "assets/css/main.min.css"
+		link(href=urlStyle rel='stylesheet' type='text/css')
 	body
 		block page-wrapper
 			block header
