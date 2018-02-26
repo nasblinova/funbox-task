@@ -265,7 +265,7 @@ body {
   background: linear-gradient(135deg, transparent 30px, #b3b3b3 30px);
   cursor: default;
 }
-.product__checkbox[disabled] + .product__inner .product__weight {
+.product__checkbox[disabled] + .product__inner .product__card .product__weight {
   background-color: #b3b3b3;
 }
 .product__checkbox[disabled] + .product__inner .product__card-inner:before,
