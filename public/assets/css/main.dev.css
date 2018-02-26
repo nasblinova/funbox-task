@@ -347,6 +347,7 @@ body {
   line-height: 56px;
   position: relative;
   left: -3px;
+  top: 1px;
 }
 .product__taste {
   display: block;
@@ -377,7 +378,8 @@ body {
   background-color: #1698d9;
   position: absolute;
   right: 12px;
-  bottom: 11px;
+  bottom: 12px;
+  line-height: 0.9;
   font-size: 42px;
   text-align: center;
   color: #ffffff;
@@ -386,10 +388,14 @@ body {
   font-size: 21px;
   text-align: center;
   color: #ffffff;
+  position: relative;
+  top: 2px;
 }
 .product__footer {
   text-align: center;
   font-size: 13px;
+  position: relative;
+  top: 1px;
 }
 .product__caption.disabled,
 .product__caption.selected {
