@@ -1,0 +1,25 @@
+div(block="product")
+	input(elem="checkbox" type="checkbox" checked=productSelect disabled=productDisable id=productId name="product" value=productId)
+	div(elem="inner")
+		label(elem="card" for=productId class=productSelect ? "selected" : "")
+			div(elem="card-inner")
+				div(elem="description")
+					p(elem="tagline")= topText
+					p(elem="tagline" mods="question") Котэ не одобряет?
+					h2(elem="title")= title
+					p(elem="taste")= taste
+					ul(elem="details")
+						each detail in details
+							li(elem="detail")
+								if detail.count
+									b= detail.count+' '
+								= detail.text
+				div(elem="weight")= weight
+					span(elem="weight-symbol") кг
+		div(elem="footer")
+			p(elem="caption" class="default") Чего сидишь? Порадуй котэ,
+				label(elem="link" for=productId)
+					span(elem="link-dashed") купи
+					| .
+			p(elem="caption" class="selected")= captionSelected
+			p(elem="caption" class="disabled")= captionDisabled

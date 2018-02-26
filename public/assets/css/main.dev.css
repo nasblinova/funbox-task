@@ -1,0 +1,409 @@
+@font-face {
+  font-family: 'Exo 2.0';
+  src: url('../fonts/Exo20-Thin.eot');
+  src: url('../fonts/Exo20-Thin.eot?#iefix') format('embedded-opentype'), url('../fonts/Exo20-Thin.woff2') format('woff2'), url('../fonts/Exo20-Thin.woff') format('woff'), url('../fonts/Exo20-Thin.ttf') format('truetype'), url('../fonts/Exo20-Thin.svg#Exo2.0-Thin') format('svg');
+  font-weight: 100;
+}
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html,
+body {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  background: #000000;
+  color: #ffffff;
+  display: flex;
+  flex: 1;
+  min-height: 100%;
+  font-size: 16px;
+  margin: 0;
+  background-image: url('../img/pattern.png');
+}
+* {
+  -webkit-font-smoothing: antialiased;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+  outline: none !important;
+}
+.store {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  background: url('../img/shadow.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (max-width: 767px), (min-width: 768px) and (max-width: 1025px) {
+  .store {
+    align-items: stretch;
+  }
+}
+.store__container {
+  width: 1280px;
+  padding: 0 80px;
+}
+@media (max-width: 767px), (min-width: 768px) and (max-width: 991px), (min-width: 992px) and (max-width: 1199px) {
+  .store__container {
+    width: 100%;
+    padding: 0 16px;
+  }
+}
+.store__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .store__wrapper {
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) and (max-width: 1025px) {
+  .store__wrapper {
+    flex-wrap: wrap;
+  }
+}
+.store__title {
+  font-family: 'Exo 2.0';
+  font-size: 36px;
+  font-weight: 100;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 1px 1px #000000;
+  margin: 0 0 28px 0;
+}
+@media (max-width: 767px), (min-width: 768px) and (max-width: 1025px) {
+  .store__title {
+    margin-top: 20px;
+  }
+}
+.product {
+  position: relative;
+  width: 320px;
+}
+@media (max-width: 767px) {
+  .product {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1025px) {
+  .product {
+    width: 100%;
+    margin-bottom: 35px;
+    flex: 1 0 50%;
+  }
+  .product:first-child {
+    flex: 0 1 100%;
+  }
+}
+.product__checkbox {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  z-index: -9999;
+}
+.product__checkbox:checked + .product__inner .product__card {
+  background: linear-gradient(135deg, transparent 30px, #d91667 30px);
+}
+.product__checkbox:checked + .product__inner .product__card.selected:hover {
+  background: linear-gradient(135deg, transparent 30px, #e52e7a 30px);
+}
+.product__checkbox:checked + .product__inner .product__card.selected:hover .product__weight {
+  background-color: #e52e7a;
+}
+.product__checkbox:checked + .product__inner .product__card.selected:hover .product__tagline {
+  display: none;
+}
+.product__checkbox:checked + .product__inner .product__card.selected:hover .product__tagline--question {
+  display: block;
+}
+.product__checkbox:checked + .product__inner .product__card .product__weight {
+  background-color: #d91667;
+}
+.product__checkbox:checked + .product__inner .product__caption.default,
+.product__checkbox:checked + .product__inner .product__caption.disabled {
+  display: none;
+}
+.product__checkbox:checked + .product__inner .product__caption.selected {
+  display: block;
+}
+.product__checkbox[disabled] + .product__inner .product__card {
+  background: linear-gradient(135deg, transparent 30px, #b3b3b3 30px);
+  cursor: default;
+}
+.product__checkbox[disabled] + .product__inner .product__weight {
+  background-color: #b3b3b3;
+}
+.product__checkbox[disabled] + .product__inner .product__card-inner:before,
+.product__checkbox[disabled] + .product__inner .product__description {
+  opacity: 0.5;
+}
+.product__checkbox[disabled] + .product__inner .product__description * {
+  color: #b3b3b3;
+}
+.product__checkbox[disabled] + .product__inner .product__caption.default,
+.product__checkbox[disabled] + .product__inner .product__caption.selected {
+  display: none;
+}
+.product__checkbox[disabled] + .product__inner .product__caption.disabled {
+  display: block;
+  color: #ffff66;
+}
+.product__card {
+  display: flex;
+  flex: 1;
+  height: 480px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, transparent 30px, #1698d9 30px);
+  padding: 4px;
+  margin: 0 auto 14px;
+  cursor: pointer;
+}
+@media (max-width: 767px), (min-width: 768px) and (max-width: 1025px) {
+  .product__card {
+    max-width: 320px;
+  }
+}
+.product__card-inner {
+  flex: 1 100%;
+  border-radius: 10px;
+  background: linear-gradient(135deg, transparent 29px, #fff 29px);
+  position: relative;
+  overflow: hidden;
+}
+.product__card-inner:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -28px;
+  bottom: -92px;
+  width: 368px;
+  height: 360px;
+  background-image: url("../img/cat-funbox.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.product:hover .product__card {
+  background: linear-gradient(135deg, transparent 30px, #2ea8e6 30px);
+}
+.product:hover .product__card .product__weight {
+  background-color: #2ea8e6;
+}
+.product:hover .product__link {
+  color: #2ea8e6;
+}
+.product__description {
+  padding: 19px 16px 0 47px;
+}
+.product__tagline {
+  font-size: 16px;
+  text-align: left;
+  color: #666666;
+  margin-bottom: 5px;
+}
+.product__tagline--question {
+  color: #e62e7a;
+  display: none;
+}
+.product__title {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: left;
+  color: #000000;
+  line-height: 56px;
+  position: relative;
+  left: -3px;
+}
+.product__taste {
+  display: block;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: bold;
+  text-align: left;
+  color: #000000;
+  margin-bottom: 15px;
+}
+.product__detail {
+  font-size: 14px;
+  line-height: 16px;
+  text-align: left;
+  color: #666666;
+}
+.product__detail b {
+  font-weight: bold;
+}
+.product__weight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background-color: #1698d9;
+  position: absolute;
+  right: 12px;
+  bottom: 11px;
+  font-size: 42px;
+  text-align: center;
+  color: #ffffff;
+}
+.product__weight-symbol {
+  font-size: 21px;
+  text-align: center;
+  color: #ffffff;
+}
+.product__footer {
+  text-align: center;
+  font-size: 13px;
+}
+.product__caption.disabled,
+.product__caption.selected {
+  display: none;
+}
+.product__link {
+  font-weight: bold;
+  color: #1698d9;
+  cursor: pointer;
+}
+.product__link:hover {
+  color: #2ea8e6;
+}
+.product__link-dashed {
+  border-bottom: 1px dashed #1698d9;
+}
+/*# sourceMappingURL=main.dev.css.map */

@@ -1,0 +1,33 @@
+div(block="store")
+	div(elem="container")
+		h1(elem="title") Ты сегодня покормил кота?
+		div(elem="wrapper")
+			-var topText = "Сказочное заморское яство"
+			-var title = "Нямушка"
+			-var taste = "с фуа-гра"
+			-var details = [{count: 10, text: "порций"}, {count: 0, text: "мышь в подарок"}]
+			-var productId = "foie-gras"
+			-var captionSelected = "Печень утки разварная с артишоками."
+			-var captionDisabled = "Печалька, с фуа-гра закончился."
+			-var productSelect = false;
+			-var productDisable = false;
+			-var weight = "0,5"
+			include product
+			-var taste = "с рыбой"
+			-var details = [{count: 40, text: "порций"}, {count: 2, text: "мыши в подарок"}]
+			-var productId = "fish"
+			-var captionSelected = "Головы щучьи с чесноком да свежайшая сёмгушка."
+			-var captionDisabled = "Печалька, с рыбкой закончились."
+			-var productSelect = true;
+			-var productDisable = false;
+			-var weight = "2"
+			include product
+			-var taste = "с курой"
+			-var details = [{count: 100, text: "порций"}, {count: 5, text: "мышей в подарок"}, {count: 0, text: "заказчик доволен"}]
+			-var productId = "chicken"
+			-var captionSelected = "Филе из цыплят с трюфелями в бульоне."
+			-var captionDisabled = "Печалька, с круой закончились."
+			-var productSelect = false;
+			-var productDisable = true;
+			-var weight = "5"
+			include product
